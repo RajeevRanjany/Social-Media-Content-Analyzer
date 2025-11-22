@@ -1,31 +1,3 @@
-//package SocialMediaAnalyser.SocailMedia.controller;
-//
-//import SocialMediaAnalyser.SocailMedia.service.OCRService;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.http.HttpStatus;
-//import org.springframework.http.ResponseEntity;
-//import org.springframework.web.bind.annotation.*;
-//import org.springframework.web.multipart.MultipartFile;
-//
-//@CrossOrigin(origins = "*")
-//@RestController
-//@RequestMapping("/api")
-//public class UploadController {
-//
-//    @Autowired
-//    private OCRService ocrService;
-//
-//    @PostMapping("/upload")
-//    public ResponseEntity<?> uploadFile(@RequestParam("file") MultipartFile file) {
-//        try {
-//            String result = ocrService.extractText(file);
-//            return ResponseEntity.ok(result);
-//        } catch (Exception e) {
-//            return new ResponseEntity<>("Error: " + e.getMessage(), HttpStatus.BAD_REQUEST);
-//        }
-//    }
-//}
-
 package SocialMediaAnalyser.SocailMedia.controller;
 
 import SocialMediaAnalyser.SocailMedia.service.OCRService;
