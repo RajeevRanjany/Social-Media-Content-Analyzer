@@ -26,3 +26,6 @@ Error handling & loading UX
 
 Works fully offline (Free OCR)
 
+Simple UI : <img width="1463" height="574" alt="image" src="https://github.com/user-attachments/assets/c158e585-23a7-40af-b754-05575b946bc9" />
+
+
