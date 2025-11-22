@@ -28,4 +28,8 @@ Works fully offline (Free OCR)
 
 Simple UI : <img width="1463" height="574" alt="image" src="https://github.com/user-attachments/assets/c158e585-23a7-40af-b754-05575b946bc9" />
 
+Extracting Text form Image (Image Analysis) :
+<img width="1326" height="571" alt="image" src="https://github.com/user-attachments/assets/74431646-97b9-4636-9261-a4e0dddb49f9" />
 
+Extracting Text form PDF file : 
+ <img width="1489" height="966" alt="image" src="https://github.com/user-attachments/assets/2d3187d7-1e6e-40e5-bc90-0634028b8547" />
