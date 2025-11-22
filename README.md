@@ -26,10 +26,17 @@ Error handling & loading UX
 
 Works fully offline (Free OCR)
 
-Simple UI : <img width="1463" height="574" alt="image" src="https://github.com/user-attachments/assets/c158e585-23a7-40af-b754-05575b946bc9" />
+Simple UI : 
+<img width="1757" height="952" alt="Screenshot 2025-11-23 at 2 30 26 AM" src="https://github.com/user-attachments/assets/1c6d5bae-b2c1-44d9-bcf6-448a6cd12562" />
 
 Extracting Text form Image (Image Analysis) :
-<img width="1326" height="571" alt="image" src="https://github.com/user-attachments/assets/74431646-97b9-4636-9261-a4e0dddb49f9" />
+<img width="1663" height="796" alt="Screenshot 2025-11-23 at 2 33 13 AM" src="https://github.com/user-attachments/assets/aff9b011-cda3-453d-b889-00721540fa4c" />
+
 
 Extracting Text form PDF file : 
- <img width="1489" height="966" alt="image" src="https://github.com/user-attachments/assets/2d3187d7-1e6e-40e5-bc90-0634028b8547" />
+<img width="1504" height="975" alt="Screenshot 2025-11-23 at 2 33 55 AM" src="https://github.com/user-attachments/assets/c1945324-c11b-4175-8307-b07b342ee7a8" />
+
+
+
+Future Enhancement:
+The application can be extended to generate smarter engagement suggestions using AI models such as Gemini or GPT. These models can analyze tone, sentiment, topic relevance and audience targeting to recommend context-aware improvements like optimized hashtags, captions, and call-to-actions. This would move beyond rule-based checks and provide personalized content strategy guidance.
