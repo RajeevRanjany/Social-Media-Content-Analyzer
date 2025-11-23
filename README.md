@@ -1,42 +1,81 @@
-Social Media Content Analyzer
+# Social Media Content Analyzer
 
-This project is a web-based application that extracts text from uploaded social media content available in PDF files and images (screenshots, scanned documents, etc.). The main goal is to analyze raw social media content and make it editable for further engagement improvement tasks.
+A Spring Boot application that extracts text from **PDFs and Images**, performs **OCR using Tesseract**, and provides **AI-generated engagement suggestions** (hashtags, captions, emojis, CTA) using **Google Gemini**.
 
-The backend is built using Spring Boot and provides a REST API for text extraction. For PDF text extraction, the application uses Apache PDFBox to read and maintain formatting of documents. For images, it uses the Tesseract OCR engine via the Tess4J library to convert pictures into accurate text. The extracted text is then returned to the frontend where it can be viewed and copied by the user.
+---
 
-A minimal frontend is built using HTML, JavaScript, and Bootstrap, providing a user-friendly interface with loading indicators and error handling. The system also supports drag-and-drop or manual file upload via a file picker.
+##Features
 
-Tech Stack
+| Feature | Description |
+|--------|-------------|
+|  **PDF Text Extraction** | Extracts text using Apache PDFBox |
+|  **Image OCR** | Reads scanned text using Tesseract OCR |
+|  **AI Suggestions** | Generates hashtags, emojis, captions & CTA |
+|  **Drag & Drop Upload** | Simple UI with upload + loading state |
+|  **Secure API Key** | Gemini key via environment variable |
+| ⚠**Error Handling** | Basic validations & responses |
 
-Spring Boot (Backend REST API)
+---
 
-PDFBox (PDF Parsing)
+## Tech Stack
 
-Tesseract OCR + Tess4J (Image Text Extraction)
+### **Backend**
+- Java + Spring Boot
+- PDFBox
+- Tesseract (Tess4J)
+- Gemini API (AI text generation)
 
-HTML + JavaScript + Bootstrap (Frontend UI)
+### **Frontend**
+- HTML5 + Bootstrap 5
+- Vanilla JavaScript
 
-Features
+---
 
-Upload PDF or Image
+## 📁 Project Structure
 
-Extract readable text
+```
+src/
+└─ main/
+├─ java/
+│ └─ SocialMediaAnalyser/SocailMedia/
+│ ├─ controller/UploadController.java
+│ ├─ service/OCRService.java
+│ └─ service/SuggestionService.java
+└─ resources/
+├─ static/index.html
+└─ application.properties
+```
 
-Error handling & loading UX
+## Setup & Installation
 
-Works fully offline (Free OCR)
+### ▶ 1. Install Tesseract (Mac)
+```bash
+brew install tesseract
+
+
+ls /opt/homebrew/share/tessdata/
+
+git clone https://github.com/RajeevRanjany/Social-Media-Content-Analyzer
+cd SocialMediaAnalyser
+
+GEMINI_API_KEY = {GEMINI_API_KEY}
+
+Run the Applications 
+
+```
+
 
 Simple UI : 
 <img width="1757" height="952" alt="Screenshot 2025-11-23 at 2 30 26 AM" src="https://github.com/user-attachments/assets/1c6d5bae-b2c1-44d9-bcf6-448a6cd12562" />
 
 Extracting Text form Image (Image Analysis) :
-<img width="1663" height="796" alt="Screenshot 2025-11-23 at 2 33 13 AM" src="https://github.com/user-attachments/assets/aff9b011-cda3-453d-b889-00721540fa4c" />
-
+![Screenshot 2025-11-23 at 12.03.34 PM.png](../../../../var/folders/kh/bk7tfj9935vfg_p4223r8rgc0000gn/T/TemporaryItems/NSIRD_screencaptureui_7EvdyD/Screenshot%202025-11-23%20at%2012.03.34%E2%80%AFPM.png)
 
 Extracting Text form PDF file : 
-<img width="1504" height="975" alt="Screenshot 2025-11-23 at 2 33 55 AM" src="https://github.com/user-attachments/assets/c1945324-c11b-4175-8307-b07b342ee7a8" />
-
-
+![Screenshot 2025-11-23 at 12.04.44 PM.png](../../../../var/folders/kh/bk7tfj9935vfg_p4223r8rgc0000gn/T/TemporaryItems/NSIRD_screencaptureui_zQ45Vc/Screenshot%202025-11-23%20at%2012.04.44%E2%80%AFPM.png)
 
 Future Enhancement:
-The application can be extended to generate smarter engagement suggestions using AI models such as Gemini or GPT. These models can analyze tone, sentiment, topic relevance and audience targeting to recommend context-aware improvements like optimized hashtags, captions, and call-to-actions. This would move beyond rule-based checks and provide personalized content strategy guidance.
+
+Smart engagement suggestions powered fully by AI sentiment + tone analysis (Gemini / GPT).
+
+MIT License © 2025
