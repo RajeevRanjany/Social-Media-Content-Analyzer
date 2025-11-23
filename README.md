@@ -69,10 +69,12 @@ Simple UI :
 <img width="1757" height="952" alt="Screenshot 2025-11-23 at 2 30 26 AM" src="https://github.com/user-attachments/assets/1c6d5bae-b2c1-44d9-bcf6-448a6cd12562" />
 
 Extracting Text form Image (Image Analysis) :
-![Screenshot 2025-11-23 at 12.03.34 PM.png](../../../../var/folders/kh/bk7tfj9935vfg_p4223r8rgc0000gn/T/TemporaryItems/NSIRD_screencaptureui_7EvdyD/Screenshot%202025-11-23%20at%2012.03.34%E2%80%AFPM.png)
+<img width="1373" height="801" alt="Screenshot 2025-11-23 at 12 16 03 PM" src="https://github.com/user-attachments/assets/3a13859a-c630-4328-827d-e5fe0e559602" />
+
 
 Extracting Text form PDF file : 
-![Screenshot 2025-11-23 at 12.04.44 PM.png](../../../../var/folders/kh/bk7tfj9935vfg_p4223r8rgc0000gn/T/TemporaryItems/NSIRD_screencaptureui_zQ45Vc/Screenshot%202025-11-23%20at%2012.04.44%E2%80%AFPM.png)
+<img width="1350" height="797" alt="Screenshot 2025-11-23 at 12 15 38 PM" src="https://github.com/user-attachments/assets/5ab74bbe-8f35-47da-ad19-50ec3fa99be5" />
+
 
 Future Enhancement:
 
