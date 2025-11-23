@@ -8,7 +8,6 @@ public class SocailMediaApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SocailMediaApplication.class, args);
-
 	}
 
 }
