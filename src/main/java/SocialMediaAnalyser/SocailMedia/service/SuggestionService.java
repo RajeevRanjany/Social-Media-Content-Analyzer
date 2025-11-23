@@ -1,48 +1,71 @@
 package SocialMediaAnalyser.SocailMedia.service;
 
+import okhttp3.*;
+import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
 public class SuggestionService {
 
-    public String getSuggestions(String text) {
+    @Value("${GEMINI_API_KEY}")
+    private String apiKey;
+
+    private final OkHttpClient client = new OkHttpClient();
+
+    public String getSuggestions(String text) throws Exception {
+
         if (text == null || text.trim().isEmpty()) {
-            return "No text detected. Please try with a clearer document or image.";
-        }
-
-        StringBuilder sb = new StringBuilder();
-        sb.append("Engagement Suggestions:\n");
-
-        int wordCount = text.split("\\s+").length;
-
-
-        if (wordCount < 20) {
-            sb.append("- Content is quite short. Add a bit more context or details.\n");
-        } else if (wordCount > 200) {
-            sb.append("- Content is long. Try making it more concise for better readability.\n");
+            return "⚠ No text detected. Please upload a clearer document or image.";
         }
 
 
-        if (!text.matches(".*[🤩🔥✨💯❤️😎].*")) {
-            sb.append("🤩🔥✨💯❤️😎].\n");
+        String prompt = "You are a social media optimization assistant. "
+                + "Based on the text below, provide ONLY:\n"
+                + "1) Best hashtags (short, relevant)\n"
+                + "2) Emojis for better engagement\n"
+                + "3) A rewritten catchy & short caption\n"
+                + "4) A strong call-to-action line\n\n"
+                + "Return response clearly formatted with line breaks.\n\n"
+                + "Text:\n" + text;
+
+
+        MediaType mediaType = MediaType.parse("application/json");
+        String requestBodyText =
+                "{ \"contents\": [{ \"role\": \"user\", \"parts\": [{ \"text\": \"" +
+                        prompt.replace("\"", "\\\"") + "\" }] }] }";
+
+        RequestBody requestBody = RequestBody.create(requestBodyText, mediaType);
+
+
+        Request request = new Request.Builder()
+                .url("https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=" + apiKey)
+                .post(requestBody)
+                .header("Content-Type", "application/json")
+                .build();
+
+        Response response = client.newCall(request).execute();
+        String jsonResponse = response.body().string();
+
+        if (!response.isSuccessful()) {
+            return "🚨 Error from AI: " + jsonResponse;
         }
 
-        if (!text.contains("#")) {
-            sb.append("✨we can add here hashtags (e.g. #travel, #fitness, #coding).\n");
-        }
 
-        if (!text.toLowerCase().matches(".*(follow|check|subscribe|share|visit|learn more|link in bio).*")) {
-            sb.append("“Follow for more”, “Check the link in bio”).\n");
-        }
+        try {
+            JSONObject obj = new JSONObject(jsonResponse);
+            String extracted = obj
+                    .getJSONArray("candidates")
+                    .getJSONObject(0)
+                    .getJSONObject("content")
+                    .getJSONArray("parts")
+                    .getJSONObject(0)
+                    .getString("text");
 
-        if (!text.contains("?")) {
-            sb.append("(e.g., “What do you think?”).\n");
-        }
+            return extracted.trim();
 
-        String result = sb.toString();
-        if (result.equals("Engagement Suggestions:\n")) {
-            return "Looks good! Your post already has good engagement elements";
+        } catch (Exception e) {
+            return "AI Response Parsing Error. Raw:\n" + jsonResponse;
         }
-        return result;
     }
 }
