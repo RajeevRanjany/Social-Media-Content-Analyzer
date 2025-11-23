@@ -1,4 +1,7 @@
+
 # Social Media Content Analyzer
+
+(Live) : https://meticulous-courage-production-6db5.up.railway.app
 
 A Spring Boot application that extracts text from **PDFs and Images**, performs **OCR using Tesseract**, and provides **AI-generated engagement suggestions** (hashtags, captions, emojis, CTA) using **Google Gemini**.
 
