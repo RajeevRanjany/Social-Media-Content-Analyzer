@@ -16,7 +16,7 @@ public class SuggestionService {
     public String getSuggestions(String text) throws Exception {
 
         if (text == null || text.trim().isEmpty()) {
-            return "⚠ No text detected. Please upload a clearer document or image.";
+            return "No text detected. Please upload a clearer document or image.";
         }
 
 
