@@ -1,9 +1,27 @@
 
 # Social Media Content Analyzer
 
-(Live) : https://meticulous-courage-production-6db5.up.railway.app
+Live : https://meticulous-courage-production-6db5.up.railway.app
+
+[Watch the video] : https://drive.google.com/file/d/1QHDxlmO4dHC9lXKFLC0gVCY-wSg4BXC3/view?usp=sharing
+
+
 
 A Spring Boot application that extracts text from **PDFs and Images**, performs **OCR using Tesseract**, and provides **AI-generated engagement suggestions** (hashtags, captions, emojis, CTA) using **Google Gemini**.
+
+## Approach
+
+This project extracts text from both PDF and image files and then generates social media engagement suggestions using Google Gemini. For PDF files, the application uses Apache PDFBox to directly read and extract text content without converting pages into images. For images (JPG/PNG), Tesseract OCR is used to detect and extract textual content.
+
+Once the text is obtained, it is passed to the Gemini API to generate captions, hashtags, keywords, and audience engagement ideas tailored for social media use cases. 
+
+The backend is built using Spring Boot and exposes a REST API endpoint that accepts file uploads. The frontend, built using HTML, CSS and JavaScript, displays the extracted text along with AI-generated suggestions.
+
+## Deployment Note
+
+At present, PDF extraction works both locally and on cloud deployments. Image-based OCR works correctly on local machines (where Tesseract OCR is installed), but it is not yet enabled on the cloud version. This is because Tesseract requires OS-level installation in the server environment. The project will be containerized using Docker in the next update to ensure that Tesseract OCR runs reliably on cloud platforms as well.
+
+
 
 ---
 
